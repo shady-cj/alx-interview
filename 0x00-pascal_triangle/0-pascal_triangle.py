@@ -8,6 +8,10 @@ by returning a list of lists containing the integers
 
 
 def pascal_triangle(n):
+    """
+     The function implements pascal's
+     Triangle based on n
+    """
     triangle = []
     if n == 0:
         return triangle
