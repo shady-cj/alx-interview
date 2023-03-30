@@ -9,7 +9,7 @@ def canUnlockAll(boxes):
     Using stacks to implement the lockboxes
     """
     if len(boxes) == 0:
-        return True
+        return None
     stack = [0]
     visited = set([])
 
