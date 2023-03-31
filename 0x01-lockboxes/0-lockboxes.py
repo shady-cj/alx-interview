@@ -8,16 +8,17 @@ def canUnlockAll(boxes):
     """
     Using stacks to implement the lockboxes
     """
-    if len(boxes) == 0:
-        return None
     stack = [0]
     visited = set([])
 
     while len(stack) > 0:
         current = stack.pop()
         if current not in visited:
-            stack.extend(boxes[current])
-            visited.add(current)
+            try:
+                stack.extend(boxes[current])
+                visited.add(current)
+            except:
+                continue
     n = len(boxes)
     for i in range(n):
         if i not in visited:
