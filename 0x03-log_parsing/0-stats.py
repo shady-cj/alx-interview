@@ -40,24 +40,24 @@ def main():
             total_file_size += get_file_size
             map_code_count[get_code] = map_code_count.get(get_code, 0) + 1
             if count == 10:
-                print(f"File size: {total_file_size}")
+                print("File size: {}".format(total_file_size))
                 for code in valid_codes:
                     if map_code_count.get(code) is None:
                         continue
-                    print(f"{code}: {map_code_count[code]}")
+                    print("{}: {}".format(code, map_code_count[code]))
                 count = 0
     except KeyboardInterrupt:
-        print(f"File size: {total_file_size}")
+        print("File size: {}".format(total_file_size))
         for code in valid_codes:
             if map_code_count.get(code) is None:
                 continue
-            print(f"{code}: {map_code_count[code]}")
+            print("{}: {}".format(code, map_code_count[code]))
     except Exception as e:
-        print(f"File size: {total_file_size}")
+        print("File size: {}".format(total_file_size))
         for code in valid_codes:
             if map_code_count.get(code) is None:
                 continue
-            print(f"{code}: {map_code_count[code]}")
+            print("{}: {}".format(code, map_code_count[code]))
 
 
 if __name__ == "__main__":
