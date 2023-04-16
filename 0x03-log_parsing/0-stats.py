@@ -23,6 +23,7 @@ def main():
     try:
         while True:
             read_stdin = input()
+            count += 1
             matches = re.findall(general_re, read_stdin)
             if len(matches) != 6:
                 continue
@@ -36,12 +37,11 @@ def main():
                 continue
             try:
                 get_code = int(matches[4])
-                get_file_size = int(matches[5])
+                if get_code not in set(valid_codes):
+                    continue
             except:
-                continue
-            if get_code not in set(valid_codes):
-                continue
-            count += 1
+                pass
+            get_file_size = int(matches[5])
             total_file_size += get_file_size
             map_code_count[get_code] = map_code_count.get(get_code, 0) + 1
             if count == 10:
