@@ -33,6 +33,8 @@ def main():
                 continue
             if not all([matches[3].startswith('"'), matches[3].endswith('"')]):
                 continue
+            if matches[3].strip('"') != "GET /projects/260 HTTP/1.1":
+                continue
             get_code = int(matches[4])
             get_file_size = int(matches[5])
             if get_code not in set(valid_codes):
