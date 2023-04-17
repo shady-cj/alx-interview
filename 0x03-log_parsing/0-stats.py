@@ -42,7 +42,7 @@ def main():
                 if get_code not in set(valid_codes):
                     continue
             except:
-                pass
+                continue
             map_code_count[get_code] = map_code_count.get(get_code, 0) + 1
             if count == 10:
                 print("File size: {}".format(total_file_size))
