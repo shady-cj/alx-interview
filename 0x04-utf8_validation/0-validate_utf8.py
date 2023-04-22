@@ -13,19 +13,18 @@ def validUTF8(data):
 
     for entry in data:
         bitmask = 128
-
         if no_of_bytes == 0:
             while (entry & bitmask):
                 no_of_bytes += 1
                 bitmask >>= 1
+            if no_of_bytes == 0:
+                continue
             if no_of_bytes == 1 or no_of_bytes > 4:
                 return False
         else:
-            if (entry & bitmask) == 128 and (entry & bitmask) == 0:
-                no_of_bytes -= 1
-                continue
-            else:
+            if not all([entry & bitmask == 128, entry & bitmask == 0]):
                 return False
+        no_of_bytes -= 1
     if no_of_bytes == 0:
-        return True        
+        return True
     return False
