@@ -22,7 +22,7 @@ def validUTF8(data):
             if no_of_bytes == 1 or no_of_bytes > 4:
                 return False
         else:
-            if not all([entry & bitmask == 128, entry & bitmask == 0]):
+            if not all([entry & bitmask == 128, entry & 64 == 0]):
                 return False
         no_of_bytes -= 1
     if no_of_bytes == 0:
