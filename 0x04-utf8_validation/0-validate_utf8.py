@@ -26,4 +26,6 @@ def validUTF8(data):
                 continue
             else:
                 return False
-    return True
+    if no_of_bytes == 0:
+        return True        
+    return False
