@@ -36,14 +36,17 @@ def main():
             if matches[3].strip('"') != "GET /projects/260 HTTP/1.1":
                 continue
             try:
+                get_file_size = int(matches[5])
+                total_file_size += get_file_size
+            except:
+                pass
+            try:
                 get_code = int(matches[4])
                 if get_code not in set(valid_codes):
                     continue
+                map_code_count[get_code] = map_code_count.get(get_code, 0) + 1
             except:
                 pass
-            get_file_size = int(matches[5])
-            total_file_size += get_file_size
-            map_code_count[get_code] = map_code_count.get(get_code, 0) + 1
             if count == 10:
                 print("File size: {}".format(total_file_size))
                 for code in valid_codes:
