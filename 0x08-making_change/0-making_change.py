@@ -10,7 +10,7 @@ def makeChange(coins, total):
     a function that determines the fewest numbers
     of coins to meet a given amount
     """
-    if total == 0:
+    if total <= 0:
         return 0
     n_coins = list(sorted(coins))
     rem = total
