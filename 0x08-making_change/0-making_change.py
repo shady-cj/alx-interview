@@ -12,6 +12,8 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
+    if len(coins) == 0:
+        return -1
     n_coins = list(sorted(coins))
     rem = total
     den = n_coins.pop()
