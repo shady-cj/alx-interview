@@ -22,15 +22,15 @@ def island_perimeter(grid):
             right = j + 1
             if grid[i][j] == 1:
                 if ((top >= 0 and grid[top][j] == 0) or
-                top < 0):
+                   top < 0):
                     perimeter += 1
                 if ((bottom <= y_len and grid[bottom][j] == 0) or
-                bottom > y_len):
+                   bottom > y_len):
                     perimeter += 1
                 if ((left >= 0 and grid[i][left] == 0) or
-                left < 0):
+                   left < 0):
                     perimeter += 1
                 if ((right <= x_len and grid[i][right] == 0) or
-                right > x_len):
+                   right > x_len):
                     perimeter += 1
     return perimeter
