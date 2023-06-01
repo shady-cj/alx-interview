@@ -4,6 +4,7 @@ Contains a function isWinner() that
 implements the prime game
 """
 
+
 def findPrime(nums):
     """
     Find and return the first prime number
