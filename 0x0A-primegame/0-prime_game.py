@@ -13,7 +13,8 @@ def findPrime(nums):
     for num in nums:
         if num == 1:
             continue
-        j = num - 1 if num < 10 else 10
+        j = num - 1
+        # if num < 10 else 10
         prime = True
         while j > 1:
             if num % j == 0:
