@@ -31,7 +31,8 @@ def isWinner(x, nums):
     """
     ben = 0
     maria = 0
-
+    if x != len(nums):
+        return None
     for num in nums:
         if num == 0:
             continue
