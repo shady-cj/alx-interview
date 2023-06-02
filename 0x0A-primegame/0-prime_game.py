@@ -34,6 +34,9 @@ def isWinner(x, nums):
     if x != len(nums):
         return None
     for num in nums:
+        mid = x // 2
+        if ben > mid or maria > mid:
+            break 
         if num == 0:
             continue
         arr = []
